@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_cadastro"
+        android:icon="@drawable/cad_produto"
+        android:title="Cadastrar" />
+
+    <item
+        android:id="@+id/navigation_deletar"
+        android:icon="@drawable/delete"
+        android:title="Excluir" />
+    <item
+        android:id="@+id/navigation_editar"
+        android:icon="@drawable/editar_produto"
+        android:title="Editar" />
+
+    <item
+        android:id="@+id/Sair"
+        android:icon="@drawable/sair"
+        android:title="Sair" />
+
+
+
+</menu>

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cor_tela">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="483dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.271">
+
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imgAPP"
+                android:layout_width="267dp"
+                android:layout_height="106dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintHorizontal_bias="0.538"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="VectorDrawableCompat" />
+            //para colocar uma imagem futura...
+            <!--app:srcCompat="@drawable/placa_sighra"-->
+
+
+            <TextView
+                android:id="@+id/txLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="0dp"
+                android:text="Login"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgAPP" />
+
+            <TextView
+                android:id="@+id/txSenha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Senha"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="@+id/edtLogin"
+                app:layout_constraintTop_toBottomOf="@+id/edtLogin" />
+
+            <TextView
+                android:id="@+id/txUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="16dp"
+                android:text="Digite seu usuario"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="@+id/txLogin"
+                app:layout_constraintTop_toBottomOf="@+id/txLogin" />
+
+            <EditText
+                android:id="@+id/edtLogin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="0dp"
+                android:inputType="textEmailAddress"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/txUsuario"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txUsuario" />
+
+            <EditText
+                android:id="@+id/edtSenha"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="1dp"
+                android:inputType="textPassword"
+                android:maxLength="8"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/txSenha"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txSenha" />
+
+            <TextView
+                android:id="@+id/txtSenhaGrande"
+                android:layout_width="0dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center"
+                android:text="Limite maximo de caracter"
+                android:textColor="@color/red"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toTopOf="@+id/btnEnter"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/txSenha"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
+
+            <Button
+                android:id="@+id/btnEnter"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/AzulClaro"
+                android:background="@color/black"
+                android:text="Entrar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="@+id/edtSenha"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtSenha"
+                app:layout_constraintVertical_bias="0.205" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="54dp"
+                android:layout_height="45dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@+id/btnEnter"
+                app:layout_constraintRight_toRightOf="@+id/btnEnter" />
+
+
+            <TextView
+                android:textColor="@color/black"
+                android:textStyle="italic"
+                android:id="@+id/txCadastrarNovo"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Cadastrar novo usuario"
+                app:layout_constraintBottom_toTopOf="@+id/progressBar"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintLeft_toLeftOf="@+id/progressBar"
+                app:layout_constraintRight_toRightOf="@+id/progressBar"
+                app:layout_constraintTop_toBottomOf="@+id/btnEnter" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+</android.support.constraint.ConstraintLayout>

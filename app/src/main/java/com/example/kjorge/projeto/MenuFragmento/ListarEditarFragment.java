@@ -38,9 +38,7 @@ public class ListarEditarFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_listar_produtos_eddd, container, false);
 
-
         //FindView
-
         btn_editar = view.findViewById(R.id.btn_editar);
         recyclerView = view.findViewById(R.id.recyclerView);
         edtCadastroNomeProduto = view.findViewById(R.id.edtCadastroNomeProduto);
@@ -60,8 +58,6 @@ public class ListarEditarFragment extends Fragment {
 
 
         //Onclick
-
-
                 if (db.ListarBancoProduto().isEmpty()){
                     Toast.makeText(getContext(),"Lista vazia, nenhum produto cadastrado.",Toast.LENGTH_SHORT).show();
                 }else {
@@ -125,6 +121,7 @@ public class ListarEditarFragment extends Fragment {
                 } else {
                     db.alterar(new CadProduto(Integer.parseInt(edtId.getText().toString()), nome, preco, marca, quantidade));
                     Toast.makeText(getContext(), "Produto Alterado", Toast.LENGTH_SHORT).show();
+
                 }
 
                 edtId.setText("");
@@ -132,10 +129,13 @@ public class ListarEditarFragment extends Fragment {
                 edtCadastroPreco.setText("");
                 edtCadastroMarca.setText("");
                 edtCadastroQuantidade.setText("");
-
+                db.ListarBancoProduto();
+                recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                recyclerView.setAdapter(new Adapter(getContext(), db.ListarBancoProduto(), clickListner()));
 
             }
         });
+
 
         return view;
     }

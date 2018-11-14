@@ -18,7 +18,6 @@ import com.example.kjorge.projeto.DataBase.DataBaseProduto.MetodosDataBaseDAO;
 import com.example.kjorge.projeto.R;
 
 public class ListarExcluidoFragment extends Fragment {
-    private Button btn_listar;
     private Button btn_excluir;
     private MetodosDataBaseDAO db;
     private RecyclerView recyclerView;
@@ -39,27 +38,23 @@ public class ListarExcluidoFragment extends Fragment {
 
 
         //FindView
-        btn_listar = view.findViewById(R.id.btn_listar);
         btn_excluir = view.findViewById(R.id.btn_excluir);
         recyclerView = view.findViewById(R.id.recyclerView);
         edt_excluir = view.findViewById(R.id.edt_excluir);
 
 
         //OnClick
-        btn_listar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (db.ListarBancoProduto().isEmpty()){
-                    Toast.makeText(getContext(),"Lista vazia, nenhum produto cadastrado.",Toast.LENGTH_SHORT).show();
-                }else{
 
-                db.ListarBancoProduto();
-                //setLayoutManager para exibir o recyclerView
-                recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                recyclerView.setAdapter(new Adapter(getContext(), db.ListarBancoProduto(), clickListner()));
-            }}
-        });
+        if (db.ListarBancoProduto().isEmpty()) {
+            Toast.makeText(getContext(), "Lista vazia, nenhum produto cadastrado.", Toast.LENGTH_SHORT).show();
+        } else {
 
+            db.ListarBancoProduto();
+            //setLayoutManager para exibir o recyclerView
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+            recyclerView.setAdapter(new Adapter(getContext(), db.ListarBancoProduto(), clickListner()));
+
+        }
         btn_excluir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,15 +63,22 @@ public class ListarExcluidoFragment extends Fragment {
 
                 if (db.ListarBancoProduto().isEmpty()) {
                     Toast.makeText(getContext(), "Digite um nome valido para excluir da lista...", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
 
-                    for (int i = 0; i  < db.ListarBancoProduto().size();i++){
-                        if (nome.equals(db.ListarBancoProduto().get(i).getNome())){
-
+                    for (int i = 0; i < db.ListarBancoProduto().size(); i++) {
+                        if (nome.equals(db.ListarBancoProduto().get(i).getNome())) {
                             db.excluir(nome);
                             Toast.makeText(getContext(), "Produto Excluido", Toast.LENGTH_SHORT).show();
-                        }else {
+
+                            //para atualizar a lista
+                            db.ListarBancoProduto();
+                            //setLayoutManager para exibir o recyclerView
+                            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                            recyclerView.setAdapter(new Adapter(getContext(), db.ListarBancoProduto(), clickListner()));
+                            edt_excluir.setText("");
+                        } else {
                             Toast.makeText(getContext(), "Produto não encontrado...", Toast.LENGTH_SHORT).show();
+                            edt_excluir.setText("");
                         }
 
                     }

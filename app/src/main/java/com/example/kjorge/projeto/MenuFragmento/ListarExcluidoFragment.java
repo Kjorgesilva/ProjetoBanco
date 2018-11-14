@@ -36,7 +36,6 @@ public class ListarExcluidoFragment extends Fragment {
 //contexto
         db = new MetodosDataBaseDAO(getContext());
 
-
         //FindView
         btn_excluir = view.findViewById(R.id.btn_excluir);
         recyclerView = view.findViewById(R.id.recyclerView);

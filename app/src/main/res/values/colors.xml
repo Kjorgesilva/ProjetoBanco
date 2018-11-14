@@ -7,4 +7,6 @@
     <color name="AzulClaro">#ff0099cc</color>
     <color name="Azulblack">#ff0099cc</color>
     <color name="red">#ff0004</color>
+    <color name="verde">#00ff15</color>
+    <color name="cinza">#aeaeae</color>
 </resources>

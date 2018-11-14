@@ -38,8 +38,6 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="VectorDrawableCompat" />
-            //para colocar uma imagem futura...
-            <!--app:srcCompat="@drawable/placa_sighra"-->
 
 
             <TextView
@@ -107,7 +105,6 @@
             <TextView
                 android:id="@+id/txtSenhaGrande"
                 android:layout_width="0dp"
-                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginRight="16dp"
@@ -115,6 +112,7 @@
                 android:text="Limite maximo de caracter"
                 android:textColor="@color/red"
                 android:textStyle="bold|italic"
+                android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@+id/btnEnter"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/txSenha"
@@ -128,9 +126,9 @@
                 android:layout_marginBottom="8dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="16dp"
-                android:textColor="@color/AzulClaro"
                 android:background="@color/black"
                 android:text="Entrar"
+                android:textColor="@color/AzulClaro"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/edtSenha"
@@ -154,8 +152,6 @@
 
 
             <TextView
-                android:textColor="@color/black"
-                android:textStyle="italic"
                 android:id="@+id/txCadastrarNovo"
                 android:layout_width="wrap_content"
                 android:layout_height="29dp"
@@ -164,6 +160,8 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Cadastrar novo usuario"
+                android:textColor="@color/black"
+                android:textStyle="italic"
                 app:layout_constraintBottom_toTopOf="@+id/progressBar"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintLeft_toLeftOf="@+id/progressBar"
@@ -174,8 +172,6 @@
         </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.CardView>
-
-
 
 
 </android.support.constraint.ConstraintLayout>

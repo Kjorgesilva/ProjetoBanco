@@ -1,4 +1,4 @@
-package com.example.kjorge.projeto.DataBaseUsuario;
+package com.example.kjorge.projeto.DataBase.DataBaseUsuario;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.kjorge.projeto.DataBase.DataBaseUsuario.Cadastro;
+import com.example.kjorge.projeto.DataBase.DataBaseUsuario.CadastroDao;
 import com.example.kjorge.projeto.LoginActivity;
 import com.example.kjorge.projeto.helpInterface.InterfaceHelp;
 import com.example.kjorge.projeto.R;

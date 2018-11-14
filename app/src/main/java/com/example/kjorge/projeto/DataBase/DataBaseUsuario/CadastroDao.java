@@ -1,10 +1,12 @@
-package com.example.kjorge.projeto.DataBaseUsuario;
+package com.example.kjorge.projeto.DataBase.DataBaseUsuario;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
+
+import com.example.kjorge.projeto.DataBase.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;

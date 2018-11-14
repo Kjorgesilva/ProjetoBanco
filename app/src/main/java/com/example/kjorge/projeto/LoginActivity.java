@@ -7,8 +7,6 @@ import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,8 +14,8 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.example.kjorge.projeto.DataBaseUsuario.CadastrarNovoClienteActivity;
-import com.example.kjorge.projeto.DataBaseUsuario.CadastroDao;
+import com.example.kjorge.projeto.DataBase.DataBaseUsuario.CadastrarNovoClienteActivity;
+import com.example.kjorge.projeto.DataBase.DataBaseUsuario.CadastroDao;
 import com.example.kjorge.projeto.MenuFragmento.MainActivity;
 import com.example.kjorge.projeto.helpInterface.InterfaceHelp;
 
@@ -57,31 +55,31 @@ public class LoginActivity extends AppCompatActivity implements InterfaceHelp {
         handler = new Handler();
 
         //metodo para implementar o texto quando passa o maximo de caracter ==8
-        edtSenha.addTextChangedListener(texto);
+//        edtSenha.addTextChangedListener(texto);
     }
 
     //metodo para implementar o texto quando passa o maximo de caracter ==8
-    private final TextWatcher texto = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-        }
-
-        @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            txtSenhaGrande.setVisibility(View.VISIBLE);
-        }
-
-        @Override
-        public void afterTextChanged(Editable editable) {
-            if (editable.length() <= 7) {
-                txtSenhaGrande.setVisibility(View.GONE);
-            } else {
-                txtSenhaGrande.setVisibility(View.VISIBLE);
-            }
-
-
-        }
-    };
+//    private final TextWatcher texto = new TextWatcher() {
+//        @Override
+//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//        }
+//
+//        @Override
+//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//            txtSenhaGrande.setVisibility(View.VISIBLE);
+//        }
+//
+//        @Override
+//        public void afterTextChanged(Editable editable) {
+//            if (editable.length() <= 7) {
+//                txtSenhaGrande.setVisibility(View.GONE);
+//            } else {
+//                txtSenhaGrande.setVisibility(View.VISIBLE);
+//            }
+//
+//
+//        }
+//    };
 
     @Override
     public void OnClick() {

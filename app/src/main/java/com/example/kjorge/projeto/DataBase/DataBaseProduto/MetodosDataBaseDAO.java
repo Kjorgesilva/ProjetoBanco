@@ -1,4 +1,4 @@
-package com.example.kjorge.projeto.MenuFragmento.CadastroDataBase;
+package com.example.kjorge.projeto.DataBase.DataBaseProduto;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import com.example.kjorge.projeto.DataBaseUsuario.DatabaseHelper;
+import com.example.kjorge.projeto.DataBase.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,17 +51,16 @@ public class MetodosDataBaseDAO {
             CadProduto listarCadastro = new CadProduto();
             listarCadastro.setId(cursor.getInt(cursor.getColumnIndex("_id")));
             listarCadastro.setNome((cursor.getString(cursor.getColumnIndex("nome"))));
-            listarCadastro.setPreco((cursor.getString(cursor.getColumnIndex("preco"))));
+            listarCadastro.setPreco(cursor.getInt(cursor.getColumnIndex("preco")));
             listarCadastro.setMarca((cursor.getString(cursor.getColumnIndex("marca"))));
-            listarCadastro.setQuantidade(cursor.getString(cursor.getColumnIndex("quantidade")));
-
+            listarCadastro.setQuantidade(cursor.getInt(cursor.getColumnIndex("quantidade")));
             listarTodosOsElementos.add(listarCadastro);
         }
 
 
         cursor.close();
 
-        Log.e("listar", "foi "+ listarTodosOsElementos.size());
+        Log.e("listar", "foi "+ listarTodosOsElementos.size() + listarTodosOsElementos.toString());
         return listarTodosOsElementos;
     }
 

@@ -1,4 +1,4 @@
-package com.example.kjorge.projeto.MenuFragmento.EditarDataBase;
+package com.example.kjorge.projeto.MenuFragmento;
 
 
 import android.os.Bundle;
@@ -14,14 +14,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.kjorge.projeto.MenuFragmento.Adapter.Adapter;
-import com.example.kjorge.projeto.MenuFragmento.CadastroDataBase.CadProduto;
-import com.example.kjorge.projeto.MenuFragmento.CadastroDataBase.MetodosDataBaseDAO;
+import com.example.kjorge.projeto.Adapter.Adapter;
+import com.example.kjorge.projeto.DataBase.DataBaseProduto.CadProduto;
+import com.example.kjorge.projeto.DataBase.DataBaseProduto.MetodosDataBaseDAO;
 import com.example.kjorge.projeto.R;
 
 public class ListarEditarFragment extends Fragment {
     private MetodosDataBaseDAO db;
-    private Button btn_listar, btn_editar;
+    private Button  btn_editar;
     private RecyclerView recyclerView;
     private EditText edtCadastroNomeProduto, edtCadastroPreco, edtCadastroMarca, edtCadastroQuantidade, edtId;
     private TextView ativarEdicao, txt0, txt1, txt2, txt3, txt4;
@@ -40,7 +40,7 @@ public class ListarEditarFragment extends Fragment {
 
 
         //FindView
-        btn_listar = view.findViewById(R.id.btn_listar);
+
         btn_editar = view.findViewById(R.id.btn_editar);
         recyclerView = view.findViewById(R.id.recyclerView);
         edtCadastroNomeProduto = view.findViewById(R.id.edtCadastroNomeProduto);
@@ -60,9 +60,7 @@ public class ListarEditarFragment extends Fragment {
 
 
         //Onclick
-        btn_listar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+
 
                 if (db.ListarBancoProduto().isEmpty()){
                     Toast.makeText(getContext(),"Lista vazia, nenhum produto cadastrado.",Toast.LENGTH_SHORT).show();
@@ -73,8 +71,7 @@ public class ListarEditarFragment extends Fragment {
                     recyclerView.setAdapter(new Adapter(getContext(), db.ListarBancoProduto(), clickListner()));
                 }
 
-            }
-        });
+
 
 
         ativarEdicao.setOnLongClickListener(new View.OnLongClickListener() {
@@ -109,6 +106,7 @@ public class ListarEditarFragment extends Fragment {
                 btn_editar.setVisibility(View.VISIBLE);
                 edtId.setVisibility(View.VISIBLE);
 
+
             }
         });
 
@@ -116,9 +114,9 @@ public class ListarEditarFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String nome = edtCadastroNomeProduto.getText().toString();
-                String preco = edtCadastroPreco.getText().toString();
+                int preco =Integer.parseInt(edtCadastroPreco.getText().toString());
                 String marca = edtCadastroMarca.getText().toString();
-                String quantidade = edtCadastroQuantidade.getText().toString();
+                int quantidade =Integer.parseInt(edtCadastroQuantidade.getText().toString());
 
 
 
@@ -128,6 +126,7 @@ public class ListarEditarFragment extends Fragment {
                     db.alterar(new CadProduto(Integer.parseInt(edtId.getText().toString()), nome, preco, marca, quantidade));
                     Toast.makeText(getContext(), "Produto Alterado", Toast.LENGTH_SHORT).show();
                 }
+
                 edtId.setText("");
                 edtCadastroNomeProduto.setText("");
                 edtCadastroPreco.setText("");

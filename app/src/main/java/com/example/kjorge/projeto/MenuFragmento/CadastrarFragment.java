@@ -1,4 +1,4 @@
-package com.example.kjorge.projeto.MenuFragmento.CadastroDataBase;
+package com.example.kjorge.projeto.MenuFragmento;
 
 
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.kjorge.projeto.DataBase.DataBaseProduto.CadProduto;
+import com.example.kjorge.projeto.DataBase.DataBaseProduto.MetodosDataBaseDAO;
 import com.example.kjorge.projeto.R;
 
 /**
@@ -54,9 +56,9 @@ public class CadastrarFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String nome = edtCadastroNomeProduto.getText().toString();
-                String preco = edtCadastroPreco.getText().toString();
+                int preco = Integer.parseInt(edtCadastroPreco.getText().toString());
                 String marca = edtCadastroMarca.getText().toString();
-                String quantidade = edtCadastroQuantidade.getText().toString();
+                int quantidade = Integer.parseInt(edtCadastroQuantidade.getText().toString());
 
                 if (edtCadastroNomeProduto.getText().toString().equals("")) {
                     edtCadastroNomeProduto.setError("Texto Obrigatorio!!");

@@ -1,4 +1,4 @@
-package com.example.kjorge.projeto.MenuFragmento.CadastroDataBase;
+package com.example.kjorge.projeto.DataBase.DataBaseProduto;
 
 import java.io.Serializable;
 
@@ -7,14 +7,14 @@ public class CadProduto implements Serializable {
 
     private int id;
     private String nome;
-    private String preco;
+    private int preco;
     private String marca;
-    private String quantidade;
+    private int quantidade;
 
     public CadProduto() {
     }
 
-    public CadProduto(String nome, String preco, String marca, String quantidade) {
+    public CadProduto(String nome, int preco, String marca, int quantidade) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
@@ -22,7 +22,7 @@ public class CadProduto implements Serializable {
         this.quantidade = quantidade;
     }
 
-    public CadProduto(int id, String nome, String preco, String marca, String quantidade) {
+    public CadProduto(int id, String nome, int preco, String marca, int quantidade) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
@@ -47,11 +47,11 @@ public class CadProduto implements Serializable {
         this.nome = nome;
     }
 
-    public String getPreco() {
+    public int getPreco() {
         return preco;
     }
 
-    public void setPreco(String preco) {
+    public void setPreco(int preco) {
         this.preco = preco;
     }
 
@@ -63,11 +63,11 @@ public class CadProduto implements Serializable {
         this.marca = marca;
     }
 
-    public String getQuantidade() {
+    public int getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(String quantidade) {
+    public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
 }

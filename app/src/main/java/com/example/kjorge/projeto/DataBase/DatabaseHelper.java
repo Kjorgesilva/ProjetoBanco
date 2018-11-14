@@ -1,4 +1,4 @@
-package com.example.kjorge.projeto.DataBaseUsuario;
+package com.example.kjorge.projeto.DataBase;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE usuario(_id INTEGER PRIMARY KEY, login TEXT ,senha TEXT)");
 
-        db.execSQL("CREATE TABLE cadproduto(_id INTEGER PRIMARY KEY, nome TEXT , preco TEXT , marca TEXT ,quantidade TEXT)");
+        db.execSQL("CREATE TABLE cadproduto(_id INTEGER PRIMARY KEY, nome TEXT , preco INTEGER , marca TEXT ,quantidade INTEGER)");
     }
 
     @Override

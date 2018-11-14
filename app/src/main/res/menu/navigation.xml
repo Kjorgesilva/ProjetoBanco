@@ -15,11 +15,17 @@
         android:icon="@drawable/editar_produto"
         android:title="Editar" />
 
+
+    <item
+        android:id="@+id/navigation_carrinho"
+        android:icon="@drawable/carrinho"
+        android:title="compra" />
+
+
     <item
         android:id="@+id/Sair"
         android:icon="@drawable/sair"
         android:title="Sair" />
-
 
 
 </menu>

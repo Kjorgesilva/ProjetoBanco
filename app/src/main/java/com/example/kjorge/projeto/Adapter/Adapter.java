@@ -1,14 +1,17 @@
-package com.example.kjorge.projeto.MenuFragmento.Adapter;
+package com.example.kjorge.projeto.Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.kjorge.projeto.MenuFragmento.CadastroDataBase.CadProduto;
+import com.example.kjorge.projeto.DataBase.DataBaseProduto.CadProduto;
 import com.example.kjorge.projeto.R;
 
 
@@ -43,14 +46,34 @@ public class Adapter extends RecyclerView.Adapter<Adapter.AdapterOsHolder> {
         //pega as informaçoes que foram mapeadas
         holder.txItem1.setText(String.valueOf(lista.get(position).getId()));
         holder.txItem2.setText(lista.get(position).getNome());
-        holder.txItem3.setText(lista.get(position).getPreco());
+        holder.txItem3.setText(String.valueOf(lista.get(position).getPreco()));
         holder.txItem4.setText(lista.get(position).getMarca());
-        holder.txItem5.setText(lista.get(position).getQuantidade());
+        holder.txItem5.setText(String.valueOf(lista.get(position).getQuantidade()));
 
+        if (click != null) {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //possição do card
+                    click.clickView(holder.itemView, position);
+//                    Toast.makeText(contexto,"TEXTO: "+ lista.get(position).getNome(),Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder alerta = new AlertDialog.Builder(contexto);
+                    alerta.setIcon(R.drawable.alerta);
+                    alerta.setTitle("Informação");
+                    alerta.setMessage(" O produto " + lista.get(position).getNome() + ", do fabricante "
+                            + lista.get(position).getMarca() + ", esta disponivel para entrega, quantidade solicitada  " +
+                    lista.get(position).getQuantidade());
 
+                    alerta.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                        }
+                    });
+                    alerta.show();
+                }
+            });
+        }
     }
-
-
     //exibi a lista toda
     @Override
     public int getItemCount() {
@@ -85,4 +108,5 @@ public class Adapter extends RecyclerView.Adapter<Adapter.AdapterOsHolder> {
 
         }
     }
+
 }

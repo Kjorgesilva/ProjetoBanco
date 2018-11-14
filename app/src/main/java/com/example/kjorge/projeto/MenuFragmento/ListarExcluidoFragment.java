@@ -1,4 +1,4 @@
-package com.example.kjorge.projeto.MenuFragmento.ExcluirDataBase;
+package com.example.kjorge.projeto.MenuFragmento;
 
 
 import android.os.Bundle;
@@ -13,8 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.kjorge.projeto.MenuFragmento.Adapter.Adapter;
-import com.example.kjorge.projeto.MenuFragmento.CadastroDataBase.MetodosDataBaseDAO;
+import com.example.kjorge.projeto.Adapter.Adapter;
+import com.example.kjorge.projeto.DataBase.DataBaseProduto.MetodosDataBaseDAO;
 import com.example.kjorge.projeto.R;
 
 public class ListarExcluidoFragment extends Fragment {
@@ -102,7 +102,6 @@ public class ListarExcluidoFragment extends Fragment {
 
             }
         };
-
 
     }
 }

@@ -1,22 +1,16 @@
 package com.example.kjorge.projeto.MenuFragmento;
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.kjorge.projeto.LoginActivity;
-import com.example.kjorge.projeto.MenuFragmento.CadastroDataBase.CadastrarFragment;
-import com.example.kjorge.projeto.MenuFragmento.EditarDataBase.ListarEditarFragment;
-import com.example.kjorge.projeto.MenuFragmento.ExcluirDataBase.ListarExcluidoFragment;
 import com.example.kjorge.projeto.helpInterface.InterfaceHelp;
 import com.example.kjorge.projeto.R;
 
@@ -58,10 +52,16 @@ public class MainActivity extends AppCompatActivity implements InterfaceHelp {
                     case R.id.navigation_deletar:
                         selectedFragment = ListarExcluidoFragment.newInstance();
                         break;
+
+                    case R.id.navigation_carrinho:
+                        selectedFragment = ListarCompraFragment.newInstance();
+                        break;
+
                     case R.id.Sair:
                         System.exit(0);
                         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                         startActivity(intent);
+
                         break;
 
 

@@ -1,4 +1,4 @@
-package com.example.kjorge.projeto.DataBaseUsuario;
+package com.example.kjorge.projeto.DataBase.DataBaseUsuario;
 
 import java.io.Serializable;
 

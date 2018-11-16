@@ -22,6 +22,8 @@ public class ListarCompraFragment extends Fragment {
     private int valorfinal = 0, qtdItem = 0;
 
 
+
+
     public ListarCompraFragment() {
         // Required empty public constructor
     }
@@ -52,6 +54,8 @@ public class ListarCompraFragment extends Fragment {
             for (int i = 0; i < db.ListarBancoProduto().size(); i++) {
                 valorfinal += db.ListarBancoProduto().get(i).getPreco();
                 qtdItem += db.ListarBancoProduto().get(i).getQuantidade();
+
+
             }
             txt_valorTotal.setText(String.valueOf(valorfinal));
             txt_totalItem.setText(String.valueOf(qtdItem));

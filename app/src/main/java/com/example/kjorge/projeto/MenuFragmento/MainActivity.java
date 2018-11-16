@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements InterfaceHelp {
                     case R.id.Sair:
                         System.exit(0);
                         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+
                         startActivity(intent);
 
                         break;

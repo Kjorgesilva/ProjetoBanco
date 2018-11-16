@@ -16,7 +16,6 @@ public class Cadastro implements Serializable {
 
     public Cadastro() {
     }
-
     public int getId() {
         return id;
     }

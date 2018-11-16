@@ -12,12 +12,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CadastroDao {
+    private String usuario;
+    private int id ;
     private DatabaseHelper databaseHelper;
     private SQLiteDatabase sqLiteDatabase;
 
     public CadastroDao(Context context){
         databaseHelper = new DatabaseHelper(context);
     }
+
+
+    public CadastroDao(String usuario, String s) {
+        this.usuario = usuario;
+
+    }
+
 
     public SQLiteDatabase getDabase(){
         if(sqLiteDatabase == null){
@@ -52,5 +61,12 @@ public class CadastroDao {
         Log.e("listar", "foi "+ listarTodosOsElementos.size());
         return listarTodosOsElementos;
     }
+
+    public void excluir(String nome) {
+        getDabase().delete("usuario", "login = ?", new String[]{nome});
+        Log.e("excluiiiiiiii", "Usuario excluido "+ ListarBanco().size());
+
+    }
+
 
 }

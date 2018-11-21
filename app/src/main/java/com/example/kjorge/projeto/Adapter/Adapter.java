@@ -54,22 +54,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.AdapterOsHolder> {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    //possição do card
+//                    //possição do card
                     click.clickView(holder.itemView, position);
-//                    Toast.makeText(contexto,"TEXTO: "+ lista.get(position).getNome(),Toast.LENGTH_SHORT).show();
-                    AlertDialog.Builder alerta = new AlertDialog.Builder(contexto);
-                    alerta.setIcon(R.drawable.alerta);
-                    alerta.setTitle("Informação");
-                    alerta.setMessage(" O produto " + lista.get(position).getNome() + ", do fabricante "
-                            + lista.get(position).getMarca() + ", esta disponivel para entrega, quantidade solicitada  " +
-                    lista.get(position).getQuantidade());
 
-                    alerta.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                        }
-                    });
-                    alerta.show();
+
                 }
             });
         }
@@ -77,10 +65,10 @@ public class Adapter extends RecyclerView.Adapter<Adapter.AdapterOsHolder> {
     //exibi a lista toda
     @Override
     public int getItemCount() {
-        if (lista.isEmpty()) {
-            return 0;
-        } else {
+        if (lista.size()>0) {
             return lista.size();
+        } else {
+            return 0;
         }
 
     }

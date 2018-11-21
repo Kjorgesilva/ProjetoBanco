@@ -99,11 +99,12 @@ public class CadastrarNovoClienteActivity extends AppCompatActivity implements I
 
                 } else {
                     for (int i = 0; i < db.ListarBanco().size(); i++) {
-                        if (usuario.equals(db.ListarBanco().get(i).getUsuario())  && senha.equals(db.ListarBanco().get(i).getSenha())) {
+                        if (usuario.equals(db.ListarBanco().get(i).getUsuario()) && senha.equals(db.ListarBanco().get(i).getSenha())) {
                             achou = true;
                         }
                     }
                     if (achou) {
+
                         alerta();
                         edtLoginCadastor.setText("");
                         edtSenhaCadastro.setText("");
@@ -139,7 +140,8 @@ public class CadastrarNovoClienteActivity extends AppCompatActivity implements I
                         if (usuario.equals(db.ListarBanco().get(i).getUsuario()) && senha.equals(db.ListarBanco().get(i).getSenha())) {
                             achou = true;
                         }
-                    }if (achou){
+                    }
+                    if (achou) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(contexto);
                         builder.setIcon(R.drawable.delete);
                         builder.setTitle("Excluir usuario");
@@ -162,7 +164,7 @@ public class CadastrarNovoClienteActivity extends AppCompatActivity implements I
                         });
 
                         builder.show();
-                    }else{
+                    } else {
                         AlertDialog.Builder alertaExcliur = new AlertDialog.Builder(contexto);
 
                         alertaExcliur.setTitle("Informação");

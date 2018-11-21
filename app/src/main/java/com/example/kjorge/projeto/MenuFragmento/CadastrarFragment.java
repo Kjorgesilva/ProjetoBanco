@@ -1,6 +1,8 @@
 package com.example.kjorge.projeto.MenuFragmento;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -23,6 +25,7 @@ public class CadastrarFragment extends Fragment {
     private Button btn_cadastrar;
     private EditText edtCadastroNomeProduto, edtCadastroPreco, edtCadastroMarca, edtCadastroQuantidade;
     private MetodosDataBaseDAO db;
+    private boolean achou = false;
 
 
     public CadastrarFragment() {
@@ -64,10 +67,19 @@ public class CadastrarFragment extends Fragment {
                     edtCadastroNomeProduto.setError("Texto Obrigatorio!!");
 
                 } else {
-                    db.inserir(new CadProduto(nome, preco, marca, quantidade));
-                    Toast.makeText(getContext(), "Produto Adicionado", Toast.LENGTH_LONG).show();
+                    for (int i = 0 ; i<db.ListarBancoProduto().size();i++){
+                        if (nome.equals(db.ListarBancoProduto().get(i).getNome())) {
+                            achou = true;
+                        }
 
-                }
+                    }
+                    if (achou){
+                       alerta();
+                    }else {
+                        db.inserir(new CadProduto(nome, preco, marca, quantidade));
+                        Toast.makeText(getContext(), "Produto Adicionado", Toast.LENGTH_LONG).show();
+
+                    }}
                 edtCadastroNomeProduto.setText("");
                 edtCadastroPreco.setText("");
                 edtCadastroMarca.setText("");
@@ -80,6 +92,23 @@ public class CadastrarFragment extends Fragment {
     public static CadastrarFragment newInstance() {
         CadastrarFragment fragment = new CadastrarFragment();
         return fragment;
+    }
+
+    public void alerta(){
+
+        AlertDialog.Builder alerta_ja_tem = new AlertDialog.Builder(getContext());
+        alerta_ja_tem.setTitle("Informação");
+        alerta_ja_tem.setMessage("O produto já esta cadastrado no sistema");
+        alerta_ja_tem.setIcon(R.drawable.carrinho);
+        alerta_ja_tem.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        alerta_ja_tem.show();
+
+
     }
 
 

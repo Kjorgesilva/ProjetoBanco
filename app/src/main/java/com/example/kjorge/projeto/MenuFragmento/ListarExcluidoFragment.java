@@ -101,6 +101,8 @@ public class ListarExcluidoFragment extends Fragment {
             @Override
             public void clickView(View view, int index) {
 
+                edt_excluir.setText(db.ListarBancoProduto().get(index).getNome());
+
             }
         };
 

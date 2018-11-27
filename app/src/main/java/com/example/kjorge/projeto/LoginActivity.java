@@ -54,6 +54,9 @@ public class LoginActivity extends AppCompatActivity implements InterfaceHelp {
         txtSenhaGrande = findViewById(R.id.txtSenhaGrande);
         handler = new Handler();
 
+
+
+
         //metodo para implementar o texto quando passa o maximo de caracter ==8
 //        edtSenha.addTextChangedListener(texto);
     }
@@ -121,7 +124,7 @@ public class LoginActivity extends AppCompatActivity implements InterfaceHelp {
                             }
                         }
                         if (achou >= 2) {
-                            alerta();
+                            alertaSenhaIncorreta();
                         }
                     }
                 }
@@ -139,11 +142,9 @@ public class LoginActivity extends AppCompatActivity implements InterfaceHelp {
 
     }
 
-    public void alerta() {
+    public void alertaSenhaIncorreta() {
         AlertDialog.Builder alerta = new AlertDialog.Builder(contexto);
-        alerta.setIcon(R.drawable.ic_addcliente24dp);
-        alerta.setTitle("Informação");
-        alerta.setMessage("Login ou Senha incorretas...");
+        alerta.setView(R.layout.alertasenhaincorreta);
 
         alerta.setPositiveButton("Cadastrar usario", new DialogInterface.OnClickListener() {
             @Override
@@ -167,9 +168,7 @@ public class LoginActivity extends AppCompatActivity implements InterfaceHelp {
     public void alertaNaoTemUsuario() {
 
         AlertDialog.Builder alertaNaoTemUsuario = new AlertDialog.Builder(contexto);
-        alertaNaoTemUsuario.setTitle("Alerta!");
-        alertaNaoTemUsuario.setIcon(R.drawable.ic_addcliente24dp);
-        alertaNaoTemUsuario.setMessage("Não possui nenhum usuario cadastrado...");
+        alertaNaoTemUsuario.setView(R.layout.alertanaotemusuario);
         alertaNaoTemUsuario.setPositiveButton("Cadastrar usuario", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {

@@ -44,7 +44,7 @@ public class ListarEditarFragment extends Fragment {
         //FindView
         btn_editar = view.findViewById(R.id.btn_editar);
         recyclerView = view.findViewById(R.id.recyclerView);
-        edtCadastroNomeProduto = view.findViewById(R.id.edtCadastroNomeProduto);
+        edtCadastroNomeProduto = view.findViewById(R.id.edtCadastroNomeProduto)   ;
         edtCadastroPreco = view.findViewById(R.id.edtCadastroPreco);
         edtCadastroMarca = view.findViewById(R.id.edtCadastroMarca);
         edtCadastroQuantidade = view.findViewById(R.id.edtCadastroQuantidade);
@@ -55,6 +55,7 @@ public class ListarEditarFragment extends Fragment {
         txt3 = view.findViewById(R.id.txt3);
         txt4 = view.findViewById(R.id.txt4);
         edtId = view.findViewById(R.id.edtId);
+
 
 
         db = new MetodosDataBaseDAO(getContext());

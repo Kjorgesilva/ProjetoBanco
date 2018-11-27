@@ -27,6 +27,7 @@ public class ListarEditarFragment extends Fragment {
     private RecyclerView recyclerView;
     private EditText edtCadastroNomeProduto, edtCadastroPreco, edtCadastroMarca, edtCadastroQuantidade, edtId;
     private TextView ativarEdicao, txt0, txt1, txt2, txt3, txt4;
+    private CadProduto lista;
 
 
     public ListarEditarFragment() {
@@ -118,7 +119,6 @@ public class ListarEditarFragment extends Fragment {
                 int quantidade = Integer.parseInt(edtCadastroQuantidade.getText().toString());
 
 
-
                 if (edtId.getText().toString().isEmpty()) {
                     Toast.makeText(getContext(), "Digite um id Valido", Toast.LENGTH_SHORT).show();
                 } else {
@@ -167,7 +167,6 @@ public class ListarEditarFragment extends Fragment {
                 edtCadastroPreco.setText(String.valueOf(db.ListarBancoProduto().get(index).getPreco()));
                 edtCadastroMarca.setText(db.ListarBancoProduto().get(index).getMarca());
                 edtCadastroQuantidade.setText(String.valueOf(db.ListarBancoProduto().get(index).getQuantidade()));
-
 
 
             }

@@ -20,6 +20,7 @@ import com.example.kjorge.projeto.DataBase.DataBaseProduto.CadProduto;
 import com.example.kjorge.projeto.DataBase.DataBaseProduto.MetodosDataBaseDAO;
 import com.example.kjorge.projeto.R;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 public class ListarCompraFragment extends Fragment {
@@ -60,7 +61,11 @@ public class ListarCompraFragment extends Fragment {
                 qtdItem += db.ListarBancoProduto().get(i).getQuantidade();
 
             }
-            txt_valorTotal.setText(String.valueOf(valorfinal));
+
+            //formata o falor para moeda
+            NumberFormat nf = NumberFormat.getCurrencyInstance();
+
+            txt_valorTotal.setText(String.valueOf(nf.format(valorfinal)));
             txt_totalItem.setText(String.valueOf(qtdItem));
         }
         return view;

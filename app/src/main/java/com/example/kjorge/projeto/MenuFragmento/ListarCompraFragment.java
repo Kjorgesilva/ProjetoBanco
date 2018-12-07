@@ -64,6 +64,7 @@ public class ListarCompraFragment extends Fragment {
 
             //formata o falor para moeda
             NumberFormat nf = NumberFormat.getCurrencyInstance();
+
             txt_valorTotal.setText(String.valueOf(nf.format(valorfinal)));
             txt_totalItem.setText(String.valueOf(qtdItem));
         }
@@ -96,6 +97,7 @@ public class ListarCompraFragment extends Fragment {
 
 
     }
+
 
 
 }

@@ -42,8 +42,8 @@ public class CadastroDao {
         Log.e("insert","inserido");
         return getDabase().insert("usuario",null,contentValues);
     }
-
-    public List<Cadastro> ListarBanco(){
+//
+   public List<Cadastro> ListarBanco(){
         List<Cadastro> listarTodosOsElementos = new ArrayList<Cadastro>();
         Cursor cursor = getDabase().rawQuery("SELECT * FROM usuario ORDER BY _id",null);
         while(cursor.moveToNext()){
@@ -62,11 +62,11 @@ public class CadastroDao {
         return listarTodosOsElementos;
     }
 
-    public void excluir(String nome) {
-        getDabase().delete("usuario", "login = ?", new String[]{nome});
-        Log.e("excluiiiiiiii", "Usuario excluido "+ ListarBanco().size());
-
-    }
+    public void excluir(String nome) {}
+//        getDabase().delete("usuario", "login = ?", new String[]{nome});
+//        Log.e("excluiiiiiiii", "Usuario excluido "+ ListarBanco().size());
+//
+//    }
 
 
 }

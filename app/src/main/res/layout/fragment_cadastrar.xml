@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="40dp"
+
     tools:context=".MenuFragmento.CadastrarFragment">
 
     <LinearLayout
@@ -45,7 +47,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:phoneNumber="true"
+            android:maxLength="10"
             />
+
+        <TextView
+            android:id="@+id/txtLimiteMaximo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Limite maximo de caracter para este campo"
+            android:textColor="@color/red"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            android:visibility="gone"/>
 
 
         <TextView
@@ -69,7 +82,17 @@
             android:id="@+id/edtCadastroQuantidade"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:maxLength="10"
             android:phoneNumber="true"/>
+        <TextView
+            android:id="@+id/txtLimiteMaximoQuantidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Limite maximo de caracter para este campo"
+            android:textColor="@color/red"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            android:visibility="gone"/>
 
 
         <Button

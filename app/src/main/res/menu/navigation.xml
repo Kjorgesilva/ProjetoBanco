@@ -22,10 +22,10 @@
         android:title="compra" />
 
 
-    <item
-        android:id="@+id/Sair"
-        android:icon="@drawable/sair"
-        android:title="Sair" />
+    <!--<item-->
+        <!--android:id="@+id/Sair"-->
+        <!--android:icon="@drawable/sair"-->
+        <!--android:title="Sair" />-->
 
 
 </menu>

@@ -1,5 +1,7 @@
 package com.example.kjorge.projeto.DataBase.DataBaseUsuario;
 
+import android.content.Context;
+
 import java.io.Serializable;
 
 public class Cadastro implements Serializable {
@@ -8,14 +10,15 @@ public class Cadastro implements Serializable {
     private String usuario;
     private String senha;
 
+
     public Cadastro(String usuario, String senha) {
         this.id = id;
         this.usuario = usuario;
         this.senha = senha;
     }
 
-    public Cadastro() {
-    }
+    public Cadastro() {}
+
     public int getId() {
         return id;
     }

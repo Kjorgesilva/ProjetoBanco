@@ -17,8 +17,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271">
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <android.support.constraint.ConstraintLayout
@@ -26,31 +25,23 @@
             android:layout_height="match_parent">
 
 
-            <ImageView
-                android:id="@+id/imgAPP"
-                android:layout_width="267dp"
-                android:layout_height="106dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintHorizontal_bias="0.538"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="VectorDrawableCompat" />
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipRefreshAgenda"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
 
             <TextView
                 android:id="@+id/txLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="0dp"
+                android:layout_marginLeft="8dp"
                 android:text="Login"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imgAPP" />
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="16dp" />
 
             <TextView
                 android:id="@+id/txSenha"
@@ -102,22 +93,6 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txSenha" />
 
-            <TextView
-                android:id="@+id/txtSenhaGrande"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginRight="16dp"
-                android:gravity="center"
-                android:text="Limite maximo de caracter"
-                android:textColor="@color/red"
-                android:textStyle="bold|italic"
-                android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@+id/btnEnter"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintLeft_toLeftOf="@+id/txSenha"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
 
             <Button
                 android:id="@+id/btnEnter"
@@ -134,7 +109,7 @@
                 app:layout_constraintLeft_toLeftOf="@+id/edtSenha"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edtSenha"
-                app:layout_constraintVertical_bias="0.205" />
+                app:layout_constraintVertical_bias="0.0" />
 
 
             <ProgressBar
@@ -142,11 +117,12 @@
                 style="?android:attr/progressBarStyle"
                 android:layout_width="54dp"
                 android:layout_height="45dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="16dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintLeft_toLeftOf="@+id/btnEnter"
                 app:layout_constraintRight_toRightOf="@+id/btnEnter" />
 
@@ -163,15 +139,45 @@
                 android:textColor="@color/black"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toTopOf="@+id/progressBar"
-                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintLeft_toLeftOf="@+id/progressBar"
                 app:layout_constraintRight_toRightOf="@+id/progressBar"
-                app:layout_constraintTop_toBottomOf="@+id/btnEnter" />
+                app:layout_constraintTop_toBottomOf="@+id/btnEnter"
+                app:layout_constraintVertical_bias="0.0" />
 
 
         </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_qauntidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="Quantidade de usuario no sistema"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_logg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Web Login"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.749"
+        tools:ignore="MissingConstraints" />
 
 
 </android.support.constraint.ConstraintLayout>

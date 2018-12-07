@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="40dp"
     tools:context=".MenuFragmento.ListarEditarFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -35,6 +35,7 @@
             android:hint="Digite ID valido para editar "
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:phoneNumber="true"
             android:visibility="gone" />
 
 
@@ -66,8 +67,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
+            android:maxLength="10"
             android:phoneNumber="true"
             />
+        <TextView
+            android:id="@+id/textMaximo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Limite maximo de caracter para este campo"
+            android:textSize="15dp"
+            android:visibility="gone"
+            android:textStyle="italic"
+            android:textColor="@color/red"/>
+
 
         <TextView
             android:id="@+id/txt3"
@@ -96,8 +108,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
+            android:maxLength="10"
             android:phoneNumber="true"
             />
+
+        <TextView
+            android:id="@+id/textMaximoQuantidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Limite maximo de caracter para este campo"
+            android:textSize="15dp"
+            android:visibility="gone"
+            android:textStyle="italic"
+            android:textColor="@color/red"/>
 
 
         <Button
@@ -118,13 +141,12 @@
             <!--android:background="@color/black"-->
             <!--android:text="Listar" />-->
 
-        <TextView
+        <CheckBox
             android:id="@+id/ativarEdicao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:gravity="end"
-            android:text="Editar..."
+            android:text="Editar"
             android:textColor="@color/AzulClaro"
             android:textSize="17dp"
             android:textStyle="bold|italic" />

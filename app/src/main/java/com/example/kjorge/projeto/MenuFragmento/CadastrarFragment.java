@@ -6,12 +6,15 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.kjorge.projeto.DataBase.DataBaseProduto.CadProduto;
@@ -27,6 +30,7 @@ public class CadastrarFragment extends Fragment {
     private EditText edtCadastroNomeProduto, edtCadastroPreco, edtCadastroMarca, edtCadastroQuantidade;
     private MetodosDataBaseDAO db;
     private boolean achou = false;
+    private TextView limiteMaximo, limiteMaximoQuantidade;
 
 
     public CadastrarFragment() {
@@ -53,9 +57,64 @@ public class CadastrarFragment extends Fragment {
         edtCadastroPreco = view.findViewById(R.id.edtCadastroPreco);
         edtCadastroMarca = view.findViewById(R.id.edtCadastroMarca);
         edtCadastroQuantidade = view.findViewById(R.id.edtCadastroQuantidade);
+        limiteMaximo = view.findViewById(R.id.txtLimiteMaximo);
+        limiteMaximoQuantidade = view.findViewById(R.id.txtLimiteMaximoQuantidade);
         edtCadastroPreco.setText("0");
         edtCadastroQuantidade.setText("0");
 
+
+        final TextWatcher texto = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                limiteMaximo.setVisibility(View.VISIBLE);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() <= 9) {
+                    limiteMaximo.setVisibility(View.GONE);
+
+                } else {
+                    limiteMaximo.setVisibility(View.VISIBLE);
+
+                }
+
+            }
+        };
+        final TextWatcher textoQuantidade = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                limiteMaximoQuantidade.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() <= 9) {
+
+                    limiteMaximoQuantidade.setVisibility(View.GONE);
+                } else {
+
+                    limiteMaximoQuantidade.setVisibility(View.VISIBLE);
+                }
+
+            }
+        };
+
+
+        edtCadastroPreco.addTextChangedListener(texto);
+        edtCadastroQuantidade.addTextChangedListener(textoQuantidade);
 
 
         //OnClick
@@ -69,7 +128,7 @@ public class CadastrarFragment extends Fragment {
 
 
 
-                if (nome.equals("") || marca.equals("") || edtCadastroPreco.getText().toString().equals("0")|| edtCadastroQuantidade.getText().toString().equals("0")) {
+                if (nome.equals("") || marca.equals("") || edtCadastroPreco.getText().toString().equals("0") || edtCadastroQuantidade.getText().toString().equals("0")) {
                     AlertDialog.Builder alerta = new AlertDialog.Builder(getContext());
                     alerta.setTitle("Informação");
                     alerta.setIcon(R.drawable.erro_24dp);

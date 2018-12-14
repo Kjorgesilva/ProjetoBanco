@@ -25,12 +25,6 @@
             android:layout_height="match_parent">
 
 
-            <android.support.v4.widget.SwipeRefreshLayout
-                android:id="@+id/swipRefreshAgenda"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-
             <TextView
                 android:id="@+id/txLogin"
                 android:layout_width="wrap_content"
@@ -156,27 +150,30 @@
         android:layout_marginBottom="76dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/black"
         android:text="Quantidade de usuario no sistema"
+        android:textColor="@color/AzulClaro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_logg"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btn_logg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_width="88dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="104dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:background="@color/black"
         android:text="Web Login"
+        android:textColor="@color/AzulClaro"
         app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.749"
         tools:ignore="MissingConstraints" />
 
 

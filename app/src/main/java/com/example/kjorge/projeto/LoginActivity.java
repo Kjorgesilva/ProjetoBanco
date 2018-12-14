@@ -12,14 +12,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.example.kjorge.projeto.DataBase.DataBaseUsuario.CadastrarNovoClienteActivity;
 import com.example.kjorge.projeto.DataBase.DataBaseUsuario.CadastroDao;
 import com.example.kjorge.projeto.MenuFragmento.MainActivity;
 import com.example.kjorge.projeto.Web.UsuarioServices;
 import com.example.kjorge.projeto.helpInterface.InterfaceHelp;
-
 import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity implements InterfaceHelp {

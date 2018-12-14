@@ -90,7 +90,6 @@ public class UsuarioServices {
             @Override
             public void onResponse(JSONObject response) {
 
-
                 Intent intent = new Intent(contexto, MainActivity.class);
                 contexto.startActivity(intent);
                 Toast.makeText(contexto,"Login usando WebService",Toast.LENGTH_SHORT).show();

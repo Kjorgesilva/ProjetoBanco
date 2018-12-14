@@ -82,7 +82,7 @@ public class ListarCompraFragment extends Fragment {
                 AlertDialog.Builder alerta = new AlertDialog.Builder(getContext());
                 alerta.setIcon(R.drawable.alerta);
                 alerta.setTitle("Informação");
-                alerta.setMessage(" O produto " + db.ListarBancoProduto().get(index).getNome() + ", da marca "
+                alerta.setMessage("O produto " + db.ListarBancoProduto().get(index).getNome() + ", da marca "
                         + db.ListarBancoProduto().get(index).getMarca() + ", esta disponivel para entrega, quantidade solicitada  " +
                         db.ListarBancoProduto().get(index).getQuantidade());
 

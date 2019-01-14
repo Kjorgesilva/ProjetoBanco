@@ -157,6 +157,7 @@ public class ListarEditarFragment extends Fragment {
                     edtCadastroMarca.setText("");
                     edtCadastroPreco.setText("0");
                     edtCadastroQuantidade.setText("0");
+
                 }
             }
         });

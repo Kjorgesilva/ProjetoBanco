@@ -11,26 +11,29 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.TextView;
+
 import com.example.kjorge.projeto.DataBase.DataBaseUsuario.CadastrarNovoClienteActivity;
 import com.example.kjorge.projeto.DataBase.DataBaseUsuario.CadastroDao;
 import com.example.kjorge.projeto.MenuFragmento.MainActivity;
 import com.example.kjorge.projeto.Web.UsuarioServices;
 import com.example.kjorge.projeto.helpInterface.InterfaceHelp;
+
 import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity implements InterfaceHelp {
 
-//    private ImageView imgAPP;
+    //    private ImageView imgAPP;
     private EditText edtLogin, edtSenha;
     private Button btnEnter;
     private ProgressBar progressBar;
     private TextView txCadastrarNovo;
     private Context contexto = this;
     private Handler handler;
-    private Button btn_quantidade,btn_logg;
+    private Button btn_quantidade, btn_logg;
+    private Switch ligarLogin;
     private UsuarioServices usuarioServices;
-
 
 
     //serve para fazer a ligação com a classe MetodosDataBaseDAO e chama os metodos do Banco
@@ -57,25 +60,46 @@ public class LoginActivity extends AppCompatActivity implements InterfaceHelp {
         btn_quantidade = findViewById(R.id.btn_qauntidade);
         btn_logg = findViewById(R.id.btn_logg);
         usuarioServices = new UsuarioServices(contexto);
+        ligarLogin = findViewById(R.id.LigarWeb);
     }
 
     @Override
     public void OnClick() {
 
+        ligarLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (ligarLogin.isChecked()) {
+                    btn_logg.setVisibility(View.VISIBLE);
+                    btnEnter.setVisibility(View.GONE);
+
+                } else {
+                    btn_logg.setVisibility(View.GONE);
+                    btnEnter.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
         btn_logg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                HashMap<String,String> map = new HashMap<>();
+                HashMap<String, String> map = new HashMap<>();
 
                 String nome = edtLogin.getText().toString();
                 String senha = edtSenha.getText().toString();
-                map.put("nome",nome);
-                map.put("senha",senha);
-                usuarioServices.doPost("users/login",map);
+                map.put("nome", nome);
+                map.put("senha", senha);
+                usuarioServices.doPost("users/login", map);
 
-                if (nome.isEmpty() && senha.isEmpty()){
+                if (nome.isEmpty() && senha.isEmpty()) {
                     AlertDialog.Builder alerta = new AlertDialog.Builder(contexto);
                     alerta.setView(R.layout.alerta_login_webservice);
+                    alerta.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    });
                     alerta.show();
                 }
                 //usa o metodo GET

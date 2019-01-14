@@ -10,7 +10,7 @@
     <android.support.v7.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="0dp"
-        android:layout_height="483dp"
+        android:layout_height="520dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -89,29 +89,65 @@
 
 
             <Button
-                android:id="@+id/btnEnter"
+            android:id="@+id/btnEnter"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/black"
+            android:text="Entrar"
+            android:textColor="@color/AzulClaro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/edtSenha"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtSenha"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+            <Button
+                android:id="@+id/btn_qauntidade"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/black"
+                android:text="Quantidade de usuario no sistema"
+                android:textColor="@color/AzulClaro"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintLeft_toLeftOf="@+id/edtSenha"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_logg"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <Button
+                android:id="@+id/btn_logg"
                 android:layout_width="0dp"
                 android:layout_height="60dp"
                 android:layout_marginBottom="8dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:background="@color/black"
-                android:text="Entrar"
+                android:text="Web Login"
+                android:visibility="gone"
                 android:textColor="@color/AzulClaro"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="@+id/edtSenha"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtSenha"
+                app:layout_constraintTop_toBottomOf="@+id/LigarWeb"
                 app:layout_constraintVertical_bias="0.0" />
-
 
             <ProgressBar
                 android:id="@+id/progressBar"
                 style="?android:attr/progressBarStyle"
                 android:layout_width="54dp"
-                android:layout_height="45dp"
-                android:layout_marginBottom="16dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="5dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:visibility="gone"
@@ -126,55 +162,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="29dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Cadastrar novo usuario"
                 android:textColor="@color/black"
                 android:textStyle="italic"
                 app:layout_constraintBottom_toTopOf="@+id/progressBar"
-                app:layout_constraintLeft_toLeftOf="@+id/progressBar"
-                app:layout_constraintRight_toRightOf="@+id/progressBar"
-                app:layout_constraintTop_toBottomOf="@+id/btnEnter"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_qauntidade" />
+
+            <Switch
+                android:id="@+id/LigarWeb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="120dp"
+                android:layout_marginTop="36dp"
+                android:text="Login Web"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnEnter" />
 
 
         </android.support.constraint.ConstraintLayout>
 
     </android.support.v7.widget.CardView>
-
-    <Button
-        android:id="@+id/btn_qauntidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/black"
-        android:text="Quantidade de usuario no sistema"
-        android:textColor="@color/AzulClaro"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_logg"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/btn_logg"
-        android:layout_width="88dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="104dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@color/black"
-        android:text="Web Login"
-        android:textColor="@color/AzulClaro"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintHorizontal_bias="0.53"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
 
 
 </android.support.constraint.ConstraintLayout>

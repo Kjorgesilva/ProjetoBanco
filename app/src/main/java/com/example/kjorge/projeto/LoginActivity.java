@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity implements InterfaceHelp {
 
     @Override
     public void FindView() {
-//        imgAPP = findViewById(R.id.imgAPP);
+//      imgAPP = findViewById(R.id.imgAPP);
         edtLogin = findViewById(R.id.edtLogin);
         edtSenha = findViewById(R.id.edtSenha);
         btnEnter = findViewById(R.id.btnEnter);

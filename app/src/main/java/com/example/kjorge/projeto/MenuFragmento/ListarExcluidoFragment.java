@@ -50,8 +50,8 @@ public class ListarExcluidoFragment extends Fragment {
 
             db.ListarBancoProduto();
             //setLayoutManager para exibir o recyclerView
-            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-            recyclerView.setAdapter(new Adapter(getContext(), db.ListarBancoProduto(), clickListner()));
+                recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                recyclerView.setAdapter(new Adapter(getContext(), db.ListarBancoProduto(), clickListner()));
 
         }
         btn_excluir.setOnClickListener(new View.OnClickListener() {

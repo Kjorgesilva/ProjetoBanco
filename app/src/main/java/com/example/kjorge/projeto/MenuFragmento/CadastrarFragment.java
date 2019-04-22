@@ -126,7 +126,9 @@ public class CadastrarFragment extends Fragment {
 
 
 
-                if (nome.equals("") || marca.equals("") || edtCadastroPreco.getText().toString().equals("0") || edtCadastroQuantidade.getText().toString().equals("0")) {
+                if (nome.equals("") || marca.equals("") || edtCadastroPreco.getText().toString().equals("0") || edtCadastroQuantidade.getText().toString().equals("0") || preco<0||quantidade<0) {
+
+
                     AlertDialog.Builder alerta = new AlertDialog.Builder(getContext());
                     alerta.setTitle("Informação");
                     alerta.setIcon(R.drawable.erro_24dp);
